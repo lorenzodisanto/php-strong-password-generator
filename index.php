@@ -20,18 +20,19 @@ require_once __DIR__ . "./partials./init.php";
 
 <body>
     <div class="container mt-3">
-        <h1>Strong Password Generator</h1>
+        <h1 class="text-center">Strong Password Generator</h1>
         <!-- Form -->
-        <form method="GET">           
-            <label for="password-length" class="form-label">Inserisci lunghezza password</label>
-            <input type="number" class="form-control mb-3" name="password-length" id="password-length">
-            <button class="btn btn-primary">Genera password</button>           
+        <form method="GET" class="card bg-success-subtle">  
+            <div class="card-body">      
+            <label for="password-length" class="form-label">Lunghezza password</label>
+            <input type="number" class="form-control mb-3" name="password-length" id="password-length" placeholder="Inserisci un numero">
+            <button class="btn btn-success">Genera password</button>
+            </div>              
         </form>
         <!-- stampo la password generata -->
         <?php if($form_sent): ?>
             <div class="alert mt-4 <?= $alert_class ?>">
-                <h4><?= $alert_text?></h4>
-                 <?php echo $password_valid?>             
+                <h4><?= $alert_text?></h4>          
             </div>
         <?php endif; ?>
     </div>
